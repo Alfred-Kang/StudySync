@@ -1,12 +1,10 @@
-# StudySync
+# StudyPal
 
 ## Introduction
 Integrated Studio Project: Interactive Web Application
 
-***This website was created for a school assignment, neither the company nor its products are legitimate.***
-
 ## Overview
-GenericApparel is an online clothing ecommerce store that offers high-quality apparel at low prices. The company is committed to providing customers a wide range of products that not only looks good, but also feels good to wear.
+In StudyPal, you embark on a virtual study adventure, logging study hours to accumulate coins and experience points (XP). Document your study sessions and engage in friendly competition to earn coins to enhance your virtual experience by acquiring rooms, cosmetics, and various assets that enable personalization of your avatar!
 
 ## Research
 
