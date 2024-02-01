@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const apikey = "65b872123d3b7f1a90c26558"
     const apiurl = "https://studypal-c298.restdb.io/rest/studypalusers"
 
+    /* 
     const sendResponse = await fetch(apiurl, {
         method: "GET",
         headers: {
@@ -26,7 +27,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         })
     })
     console.log(await postResponse.json())
-
+    */
+   
     document.getElementById("loginForm").addEventListener("submit", function(event) {
         event.preventDefault();
         var email = document.getElementById("email").value;
