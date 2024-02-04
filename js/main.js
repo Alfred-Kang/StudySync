@@ -2,8 +2,21 @@ import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 
+//check if user has logged in
+if ((localStorage.getItem("id") == null)) {
+  window.location.href = "http://127.0.0.1:5500/index.html";
+} else {
+  console.log('Logged in!')
+}
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+//logout
+document.getElementById("logout").addEventListener("click", function() {
+  localStorage.clear();
+  window.location.href = "http://127.0.0.1:5500/index.html";
+})
 
 //mouse
 let mouseX = window.innerWidth / 2;
@@ -30,7 +43,7 @@ loader.load(
 
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth/2, window.innerHeight/2);
 
 //Add the renderer to the DOM
 document.getElementById("room3d").appendChild(renderer.domElement);
@@ -65,9 +78,9 @@ function animate() {
 
 //Add a listener to the window, so we can resize the window and the camera
 window.addEventListener("resize", function () {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.aspect = window.innerWidth/2 / window.innerHeight/2;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(window.innerWidth/2, window.innerHeight/2);
 });
 
 //add mouse position listener, so we can make the eye move
