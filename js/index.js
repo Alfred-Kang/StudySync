@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 window.location.href = "/main.html";
                 break;
-            } else {
+            } else if (i>=data.length) {
                 alert('Username or Password is Incorrect! Please Try Again')
             }
         }
@@ -56,21 +56,26 @@ document.addEventListener("DOMContentLoaded", async function () {
         //password confirmation validation
         if (password !== confirmpassword) {
             alert("Password confirmation does not match!");
-        }
-    
-        const postResponse = await fetch(apiurl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "x-apikey": apikey
-            },
-            body: JSON.stringify({
-                "username": username,
-                "email": email,
-                "password": password
+        } else {
+            const postResponse = await fetch(apiurl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-apikey": apikey
+                },
+                body: JSON.stringify({
+                    "username": username,
+                    "email": email,
+                    "password": password
+                })
             })
-        })
-        console.log(await postResponse.json())
+            console.log(await postResponse.json())
+
+            alert("Account Created, Login!")
+            body.classList.replace("justify-center","justify-end")
+            signupctn.classList.toggle("hidden")
+            loginctn.classList.toggle("hidden")
+        }
     })
 
     const body = document.getElementById("body")

@@ -5,15 +5,12 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 const apikey = "65b872123d3b7f1a90c26558"
 const apiurl = "https://studypal-c298.restdb.io/rest/studypalusers"
 
-//check if user has logged in
-if ((localStorage.getItem("id") == null)) {
-  window.location.href = "/index.html";
-} else {
-  console.log('Logged in!')
-}
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+// //check if user has logged in
+// if ((localStorage.getItem("id") == null)) {
+//   window.location.href = "/index.html";
+// } else {
+//   console.log('Logged in!')
+// }
 
 //nav
 document.getElementById("userprofile").addEventListener("click", function() {
@@ -22,7 +19,7 @@ document.getElementById("userprofile").addEventListener("click", function() {
 document.getElementById("hamburgermenu").addEventListener("click", function() {
   document.getElementById("navbarhamburger").classList.toggle("hidden")
   document.getElementById("navbarhamburger").classList.toggle("absolute")
-  document.getElementById("navbarhamburger").classList.toggle("top-20")
+  document.getElementById("navbarhamburger").classList.toggle("top-28")
   document.getElementById("navbarhamburger").classList.toggle("left-0")
   document.getElementById("navbarhamburger").classList.toggle("z-50")
   document.getElementById("stupallogo").classList.toggle("drop-shadow-2xl")
@@ -43,7 +40,16 @@ const sendResponse = await fetch(apiurl, {
 })
 const data = await sendResponse.json()
 
+
 document.getElementById("welcomename").innerHTML = `Welcome, ${data[localStorage.getItem("idpos")].username}!`
+
+document.getElementById("profileusername").innerHTML = data[localStorage.getItem("idpos")].username
+document.getElementById("profileemail").innerHTML = data[localStorage.getItem("idpos")].email
+
+
+// 3D Integration
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 //mouse
 let mouseX = window.innerWidth / 2;
