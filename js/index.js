@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     //check if user is logged in
     if ((localStorage.getItem("id") !== null)) {
-        window.location.href = "http://127.0.0.1:5500/main.html";
+        window.location.href = "/main.html";
     } else {
         console.log('Please Login')
     }
@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         })
         const data = await sendResponse.json()
-        console.log(data)
         
         //login validation
         for (let i = 0; i < data.length; i++) {
@@ -34,8 +33,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 //saving id to localstorage to save session login
                 localStorage.setItem("id", data[i]._id)
+                localStorage.setItem("idpos", i)
 
-                window.location.href = "http://127.0.0.1:5500/main.html";
+                window.location.href = "/main.html";
                 break;
             } else {
                 alert('Username or Password is Incorrect! Please Try Again')

@@ -2,9 +2,12 @@ import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
 
+const apikey = "65b872123d3b7f1a90c26558"
+const apiurl = "https://studypal-c298.restdb.io/rest/studypalusers"
+
 //check if user has logged in
 if ((localStorage.getItem("id") == null)) {
-  window.location.href = "http://127.0.0.1:5500/index.html";
+  window.location.href = "/index.html";
 } else {
   console.log('Logged in!')
 }
@@ -12,11 +15,35 @@ if ((localStorage.getItem("id") == null)) {
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
+//nav
+document.getElementById("userprofile").addEventListener("click", function() {
+  document.getElementById("userdropdown").classList.toggle("hidden")
+})
+document.getElementById("hamburgermenu").addEventListener("click", function() {
+  document.getElementById("navbarhamburger").classList.toggle("hidden")
+  document.getElementById("navbarhamburger").classList.toggle("absolute")
+  document.getElementById("navbarhamburger").classList.toggle("top-20")
+  document.getElementById("navbarhamburger").classList.toggle("left-0")
+  document.getElementById("navbarhamburger").classList.toggle("z-50")
+  document.getElementById("stupallogo").classList.toggle("drop-shadow-2xl")
+})
+
 //logout
 document.getElementById("logout").addEventListener("click", function() {
   localStorage.clear();
-  window.location.href = "http://127.0.0.1:5500/index.html";
+  window.location.href = "/index.html";
 })
+
+const sendResponse = await fetch(apiurl, {
+  method: "GET",
+  headers: {
+      "Content-Type": "application/json",
+      "x-apikey": apikey
+  }
+})
+const data = await sendResponse.json()
+
+document.getElementById("welcomename").innerHTML = `Welcome, ${data[localStorage.getItem("idpos")].username}!`
 
 //mouse
 let mouseX = window.innerWidth / 2;
@@ -29,7 +56,7 @@ let objToRender = 'jeremy';
 const loader = new GLTFLoader();
 
 loader.load(
-  'models/jeremy.gltf',
+  'models/glbroom.glb',
   function (gltf) {
     scene.add(gltf.scene);
   },
@@ -61,7 +88,7 @@ const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "jeremy" ?
 scene.add(ambientLight);
 
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
-if (objToRender === "jeremy") {
+if (objToRender === "jeremy") { 
   controls = new OrbitControls(camera, renderer.domElement);
 }
 
