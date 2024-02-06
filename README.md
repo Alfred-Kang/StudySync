@@ -8,38 +8,64 @@ In StudyPal, you embark on a virtual study adventure, logging study hours to acc
 
 ## Research
 
-### E-commerce 
-When researching on what website to create, there were a few key factors I kept in mind. 
-
-Firstly, we were tasked to create a **static** website, which meant that the website's main objective is to display information.
-
-Secondly, I wanted to do something that I can have free creativity on, which meant that instead of revamping an existing company's website, I decided to create my own fake company website, GenericApparel.
-
-And lastly, I wanted something to add filters, micro interactions, and potentially a search bar feature, and thus I decided on an e-commerce website.
+### Gamified Websites
+While researching on what website to create, I took into account our assignment's main requirements: 1. Gamification, 2. API Implementation. Therefore, I thought about the API implementation, and decided that I wanted to attempt to use RestDB to create a simple signin account system. I decided to research some gamified websites for my idea, and remembered three apps that exploded in popularity back when I was in secondary school: Yeolpumta, Forest, and Bondee
 
 ### Inspiration
-I searched up some big e-commerce sites such as [Uniqlo](https://www.uniqlo.com/), [Zara](https://www.zara.com/), and [Nike](https://www.nike.com/) as inspiration when designing the wireframe for GenericApparel, and implemented some of my favourite UI/UX features from each of them.
+
+#### [Yeolpumta](https://apps.apple.com/us/app/ypt-yeolpumta/id1441909643)
+Yeolpumta, a highly popular app during my study days, thrived due to its competitive edge. With peers vying to outdo each other in study hours, its gamification concept effectively motivated studying. Its group, country, and global leaderboards fueled daily study habits and healthy competition, making it an ideal fit for our student and school app.
+
+#### [Forest](https://www.forestapp.cc/)
+In researching the app Forest, we were drawn to its productivity feature, which incentivizes users to set goals and earn rewards based on their productivity time. We integrated a similar system into our game to encourage user engagement and collaboration in studying, allowing users to set goals and study together with their preferred level of commitment.
+
+#### [Bondee](https://bondee.com/main)
+A popular app, Bondee, developed by a Singapore-based tech firm, is widely used by both youths and adults. It's a virtual social networking platform known for its customizability and interactive features, facilitating connections and personalization within the metaverse. Inspired by its success, we've decided to incorporate a similar customization feature into our game to encourage daily logins for studying with friends and family.
+
+Not to mention, the 3D room feature provided by Bondee greatly aligns with what we wanted to design for our 3D section of the assignment!
 
 ## Features
 
 ### Existing Features
 
-#### Home Page
-- Headline (Biggest News)
-- Announcements (Discounts, Sales)
-- Featured Items (Most Popular Items)
-- Coming Soon Items
+#### Start Page
+- 
 
-#### Product List Page
-- Products Filter (Size, Colour, Price, Type)
-- Products Overview
+#### Login Signup Pages
+- Account Login 
+- Account Signup
 
-#### Contact Us Page
+#### Home/Main Page
+- 
+
+#### Avatar Customisation Page
+- 
+
+#### Room Customisation Page
+- 
+
+#### Leaderboard Page
+- 
+
+#### Studying Page
+- 
+
+#### Contact Page
+- Cognify Team (Name, Linkedin, Role)
 - Text input fields for name, email, message
-- Privacy Policy Checkbox (fake)
 - Form Submission
 
+#### Dashboard Page
+- 
+
+#### Details Page
+- 
+
 ### Features Left to Implement
+
+#### Friends/Social Page
+
+#### Study Together Page
 
 ## Design Process
 
@@ -53,36 +79,48 @@ I searched up some big e-commerce sites such as [Uniqlo](https://www.uniqlo.com/
 - Javascript
   - This project uses Javascript to create interactive elements for the website
 
+- tailwindcss
+  - This project uses tailwindcss to aid in styling the website/HTML elements
+
+- three.js
+  - This project uses three.js to import and render 3D assets into the website
+
+- Autodesk Maya/Blender
+  - This project uses Autodesk Maya/Blender to model the 3D assets for the website
+
+- Adobe Substance 3D Painter
+  - This project uses Adobe Substance 3D Painter to texture and paint the 3D assets modelled
+
+- Adobe Photoshop/Illustrator
+  - This project uses Adobe Photoshop/Illustrator to create digital assets(logo, marketing material...etc)
+
 - Visual Studio Code
   - This project uses Visual Studio Code as the main integrated development environment (IDE)
 
-- Adobe XD
-  - This project uses Adobe XD to plan and design the wireframe for the website during the planning stage
+- Figma
+  - This project uses Figma to plan and design the wireframe for the website during the planning stage
+
+- Jira
+  - This project uses Jira to track and manage project progress and team.
 
 ## Design
-[Wireframe (Adobe XD)](https://xd.adobe.com/view/13933579-7eef-434c-9168-156d16580a80-46c0/?fullscreen)
+[Wireframe (Figma)](FigmaLinkGoesHere)
 
 ### Target Audience
-Teenagers/Adults
+Teenagers/Students
 
 #### Objective
-Buy affordable aesthetic/minimalist clothing
+Record Study Hours, Customise Avatar and Room, Compete with Others
 
-#### Why GenericApparel?
-- Lowest prices guarenteed!
-- Wide range of colours to select from
-- Easy to use website interface
-- Responsive and friendly email support team
-- Free shipping for orders above $50
+#### Why StudyPal?
+- Cute and Customisation Avatar and Rooms!
+- Leaderboard to compete with others!
+- Friend system and virtual study sessions!
 
 ### User Stories
-- As a teenager, I want to buy aesthetic looking clothes, so I can look and feel good outdoors
-
-- As a teenager, I want to buy single-coloured clothing so that it is easy to pair to other articles of clothing
-
-- As a student, I want to buy good quality clothing at a affordable price, so that I can buy long-lasting clothing without the high price tag
-
-- As a young adult, I want to buy simple and generic clothes that feel good so that I do not stand out in public
+- As a student, I want to track my study hours and stay focused
+- As a student, I want to compete with friends and rise in the leaderboard
+- As a student, I want to customise and make my avatar and room look good
 
 ## Testing
 ### Tests
@@ -102,16 +140,15 @@ Buy affordable aesthetic/minimalist clothing
 10. Footer
 11. Github Repository
 12. Github Pages
+13. RestDB Database
 
 
 ## Credits
 ### Content/Media
-- All product and model images were obtained from [Uniqlo](https://www.uniqlo.com/)
-- All product titles were obtained from [Uniqlo](https://www.uniqlo.com/)
+- 
 
 ### Acknoledgements
-- I received inspiration for this project from [Uniqlo](https://www.uniqlo.com/), [Nike](https://www.nike.com/), and [Etsy](https://www.etsy.com/).
+- I received inspiration for this project from [Yeolpumta](https://apps.apple.com/us/app/ypt-yeolpumta/id1441909643), [Forest](https://www.forestapp.cc/), and [Bondee](https://bondee.com/main).
 
 ### Fonts/Typography
-- Favicon and Logo: [Satisfy](https://fonts.google.com/specimen/Satisfy)
-- Text: Geneva, Verdana, Tahoma, sans-serif
+- Font: [Concert One](https://fonts.google.com/specimen/Concert+One)
