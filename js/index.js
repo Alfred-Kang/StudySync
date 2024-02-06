@@ -79,20 +79,20 @@ document.addEventListener("DOMContentLoaded", async function () {
     })
 
     const body = document.getElementById("body")
-    const startctn = document.getElementById("startcontainer")
+    const signuploginctn = document.getElementById("signuplogincontainer")
     const loginctn = document.getElementById("logincontainer")
     const signupctn = document.getElementById("signupcontainer")
     const logo = document.getElementById("loginlogo")
 
     document.getElementById("logintogglebutton").addEventListener("click", function() {
         body.classList.replace("justify-center","justify-end")
-        startctn.classList.toggle("hidden")
+        signuploginctn.classList.toggle("hidden")
         loginctn.classList.toggle("hidden")
         logo.classList.toggle("hidden")
     })
     document.getElementById("signuptogglebutton").addEventListener("click", function() {
         body.classList.replace("justify-center","justify-end")
-        startctn.classList.toggle("hidden")
+        signuploginctn.classList.toggle("hidden")
         signupctn.classList.toggle("hidden")
         logo.classList.toggle("hidden")
     })
