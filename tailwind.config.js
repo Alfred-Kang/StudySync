@@ -12,6 +12,6 @@ tailwind.config = {
         fontFamily: {
             'concert': ['Concert One', 'sans-serif'],
         },
-      }
+      },
     }
   }

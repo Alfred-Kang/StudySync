@@ -31,20 +31,10 @@ document.getElementById("logout").addEventListener("click", function() {
   window.location.href = "/index.html";
 })
 
-const sendResponse = await fetch(apiurl, {
-  method: "GET",
-  headers: {
-      "Content-Type": "application/json",
-      "x-apikey": apikey
-  }
-})
-const data = await sendResponse.json()
+document.getElementById("welcomename").innerHTML = `Welcome, ${localStorage.getItem("username")}!`
 
-
-document.getElementById("welcomename").innerHTML = `Welcome, ${data[localStorage.getItem("idpos")].username}!`
-
-document.getElementById("profileusername").innerHTML = data[localStorage.getItem("idpos")].username
-document.getElementById("profileemail").innerHTML = data[localStorage.getItem("idpos")].email
+document.getElementById("profileusername").innerHTML = localStorage.getItem("username")
+document.getElementById("profileemail").innerHTML = localStorage.getItem("email")
 
 
 // 3D Integration
@@ -57,12 +47,12 @@ let mouseY = window.innerHeight / 2;
 
 let object;
 let controls;
-let objToRender = 'jeremy';
+let objToRender = 'roomtestfinal';
 
 const loader = new GLTFLoader();
 
 loader.load(
-  'models/glbroom.glb',
+  'models/roomtestfinal.glb',
   function (gltf) {
     scene.add(gltf.scene);
   },
@@ -76,13 +66,13 @@ loader.load(
 
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth/2, window.innerHeight/2);
+renderer.setSize(window.innerWidth/1.2, window.innerHeight/1.2);
 
 //Add the renderer to the DOM
 document.getElementById("room3d").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.z = objToRender === "jeremy" ? 25 : 500;
+camera.position.z = objToRender === "roomtestfinal" ? 25 : 500;
 
 //Add lights to the scene, so we can actually see the 3D model
 const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
@@ -90,18 +80,18 @@ topLight.position.set(500, 500, 500);
 topLight.castShadow = true;
 scene.add(topLight);
 
-const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "jeremy" ? 5 : 1);
+const ambientLight = new THREE.AmbientLight(0x333333, objToRender === "roomtestfinal" ? 5 : 1);
 scene.add(ambientLight);
 
 //This adds controls to the camera, so we can rotate / zoom it with the mouse
-if (objToRender === "jeremy") { 
+if (objToRender === "roomtestfinal") { 
   controls = new OrbitControls(camera, renderer.domElement);
 }
 
 function animate() {
   requestAnimationFrame(animate);
 
-  if (object && objToRender === "jeremy") {
+  if (object && objToRender === "roomtestfinal") {
     console.log('test')    
     object.rotation.y = -3 + mouseX / window.innerWidth * 3;
     object.rotation.x = -1.2 + mouseY * 2.5 / window.innerHeight;
@@ -111,9 +101,9 @@ function animate() {
 
 //Add a listener to the window, so we can resize the window and the camera
 window.addEventListener("resize", function () {
-  camera.aspect = window.innerWidth/2 / window.innerHeight/2;
+  camera.aspect = window.innerWidth/1.2 / window.innerHeight/1.2;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth/2, window.innerHeight/2);
+  renderer.setSize(window.innerWidth/1.2, window.innerHeight/1.2);
 });
 
 //add mouse position listener, so we can make the eye move

@@ -3,12 +3,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     const apikey = "65b872123d3b7f1a90c26558"
     const apiurl = "https://studypal-c298.restdb.io/rest/studypalusers"
 
-    //check if user is logged in
-    if ((localStorage.getItem("id") !== null)) {
-        window.location.href = "/main.html";
-    } else {
-        console.log('Please Login')
-    }
+    // //check if user is logged in
+    // if ((localStorage.getItem("id") !== null)) {
+    //     window.location.href = "/main.html";
+    // } else {
+    //     console.log('Please Login')
+    // }
+
+    var type = new Typed(".typingcaption", {
+        strings: ["Infinite Customization Potential.", "Track. Learn. Grow.", "Climb The Leaderboards."],
+        typeSpeed: 50,
+        backSpeed: 25,
+        loop: true
+    })
 
     document.getElementById("loginsubmitbutton").addEventListener("click", async function(e) {
         e.preventDefault()
@@ -33,7 +40,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 //saving id to localstorage to save session login
                 localStorage.setItem("id", data[i]._id)
-                localStorage.setItem("idpos", i)
+                localStorage.setItem("username", data[i].username)
+                localStorage.setItem("email", data[i].email)
+                localStorage.setItem("xp", data[i].xp)
+                localStorage.setItem("coins", data[i].coins)
+                localStorage.setItem("studyhours", data[i].studyhours)
+                localStorage.setItem("avatar", data[i].avatar)
+                localStorage.setItem("room", data[i].room)
 
                 window.location.href = "/main.html";
                 break;
@@ -82,19 +95,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     const signuploginctn = document.getElementById("signuplogincontainer")
     const loginctn = document.getElementById("logincontainer")
     const signupctn = document.getElementById("signupcontainer")
-    const logo = document.getElementById("loginlogo")
 
     document.getElementById("logintogglebutton").addEventListener("click", function() {
         body.classList.replace("justify-center","justify-end")
         signuploginctn.classList.toggle("hidden")
         loginctn.classList.toggle("hidden")
-        logo.classList.toggle("hidden")
     })
     document.getElementById("signuptogglebutton").addEventListener("click", function() {
         body.classList.replace("justify-center","justify-end")
         signuploginctn.classList.toggle("hidden")
         signupctn.classList.toggle("hidden")
-        logo.classList.toggle("hidden")
     })
     document.getElementById("loginherebutton").addEventListener("click", function() {
         body.classList.replace("justify-center","justify-end")
