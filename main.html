@@ -89,7 +89,7 @@
 
     <div id='studycontainer' class="relative hidden z-50">
       <div class="fixed inset-0 bg-gray-700 bg-opacity-90 transition-opacity"></div>
-      <div class="fixed inset-0 z-50 w-screen overflow-y-auto">
+      <div class="fixed inset-0 z-50 w-screen overflow-hidden">
         <div class="flex h-screen items-end justify-center p-4 text-center sm:items-center sm:p-0">
 
           <div class="flex flex-col justify-center items-center transform overflow-hidden rounded-xl bg-dblue shadow-xl sm:my-8 w-5/6 h-5/6">
@@ -136,13 +136,107 @@
             </div>
 
             <div class="flex flex-row justify-center items-center h-1/6">
-              <div id='startstudybtn' class="bg-cream p-8 rounded-full text-dblue text-3xl font-concert cursor-pointer">Start Studying!</div>
+              <div id='startstudybtn' class="bg-cream p-8 rounded-full text-dblue text-3xl font-concert cursor-pointer hover:bg-orange hover:text-cream">Start Studying!</div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
-    
+
+    <div id='studysessioncontainer' class="relative hidden z-50">
+      <div class="fixed inset-0 z-50 w-screen overflow-hidden">
+        <div class="flex h-screen items-end justify-end">
+
+          <div class="flex flex-row justify-center items-center transform overflow-hidden rounded-2xl bg-orange shadow-xl sm:my-8 w-2/5 h-2/5 m-8">
+            <div class="flex flex-col h-full w-1/2">
+              <div class="flex flex-row justify-center items-center h-1/2 m-12">
+                <div class="text-cream text-6xl font-concert">Studying!</div>
+              </div>
+              <div class="flex flex-row justify-center items-center h-1/2 m-12">
+                <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                  <div class="flex flex-col text-cream font-concert text-3xl">
+                    <span id='sessionhours' class="font-concert text-6xl">
+                      <span></span>
+                    </span>
+                    hours
+                  </div> 
+                  <div class="flex flex-col text-cream font-concert text-3xl">
+                    <span id='sessionmins' class="font-concert text-6xl">
+                      <span></span>
+                    </span>
+                    min
+                  </div> 
+                  <div class="flex flex-col text-cream font-concert text-3xl">
+                    <span id='sessionsecs' class="font-concert text-6xl">
+                      <span></span>
+                    </span>
+                    sec
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="flex flex-col h-full w-1/2 flex justify-center items-end flex-col">
+              <div id="continuestudybtn" class="hidden bg-cream font-concert w-4/5 h-full cursor-pointer hover:bg-dorange rounded-2xl flex items-center justify-center flex-row m-6">
+                <h1 class="text-dblue font-concert lg:text-6xl md:text-2xl text-xl">Continue</h1>
+              </div>
+              <div id="pausestudybtn" class="bg-cream font-concert w-4/5 h-full cursor-pointer hover:bg-dorange rounded-2xl flex items-center justify-center flex-row m-6">
+                <h1 class="text-dblue font-concert lg:text-6xl md:text-2xl text-xl">Pause</h1>
+              </div>
+              <div id="stopstudybtn" class="bg-cream font-concert w-4/5 h-full cursor-pointer hover:bg-dorange rounded-2xl flex items-center justify-center flex-row m-6">
+                <h1 class="text-dblue font-concert lg:text-6xl md:text-2xl text-xl">Stop</h1>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id='focuscontainer' class="relative hidden z-50">
+      <div class="fixed inset-0 z-50 w-screen overflow-hidden">
+        <div class="flex h-screen w-screen items-end justify-center p-4 text-center sm:items-center sm:p-0">
+
+          <div class="flex flex-col justify-center items-center bg-orange w-screen h-screen">
+            <div class="flex flex-row justify-center items-center flex-col">
+              <div class="text-cream lg:text-9xl text-5xl font-concert m-8">Stay Focused!</div>
+              <div class="text-cream lg:text-7xl text-3xl font-concert m-8">Switch back to the website tab to continue</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id='rewardcontainer' class="relative hidden z-50">
+      <div class="fixed inset-0 bg-gray-700 bg-opacity-90 transition-opacity"></div>
+      <div class="fixed inset-0 z-50 w-screen overflow-hidden">
+        <div class="flex h-screen items-end justify-center p-4 text-center sm:items-center sm:p-0">
+
+          <div class="flex flex-col justify-center items-center transform overflow-hidden rounded-xl bg-dblue shadow-xl sm:my-8 w-5/6 h-5/6">
+            <div class="flex flex-row justify-center items-center h-1/6">
+              <div class="text-cream text-6xl font-concert">Study Session Complete!</div>
+              <svg id='closerewardcontainer' class="w-12 h-12 text-cream m-8" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+            </div>
+            <div class="bg-orange w-3/4 h-full rounded-3xl m-4 flex justify-center items-center flex-row">
+              <div class="font-concert text-4xl text-cream m-4 w-1/3">
+                Rewards:
+              </div>
+              <div class="flex w-1/3 justify-center items-center flex-col m-2">
+                <i class="fa-solid fa-coins text-cream fa-2xl m-4"></i>
+                <div id='coinsreward' class="font-concert text-3xl text-cream m-2">
+                  30 Coins
+                </div>
+              </div>
+              <div class="flex w-1/3 justify-center items-center flex-col m-2">
+                <i class="fa-solid fa-book-open text-cream fa-2xl m-4"></i>
+                <div id='xpreward' class="font-concert text-3xl text-cream m-2">
+                  30,000 XP
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     const apikey = "65b872123d3b7f1a90c26558"
     const apiurl = "https://studypal-c298.restdb.io/rest/studypalusers"
 
-    // //check if user is logged in
-    // if ((localStorage.getItem("id") !== null)) {
-    //     window.location.href = "/main.html";
-    // } else {
-    //     console.log('Please Login')
-    // }
+    //check if user is logged in
+    if ((localStorage.getItem("id") !== null)) {
+        window.location.href = "/main.html";
+    } else {
+        console.log('Please Login')
+    }
 
     var type = new Typed(".typingcaption", {
         strings: ["Infinite Customization Potential.", "Track. Learn. Grow.", "Climb The Leaderboards."],
@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 localStorage.setItem("studyhours", data[i].studyhours)
                 localStorage.setItem("avatar", data[i].avatar)
                 localStorage.setItem("room", data[i].room)
+                localStorage.setItem("studysessionactive", false)
 
                 window.location.href = "/main.html";
                 break;
@@ -79,7 +80,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 body: JSON.stringify({
                     "username": username,
                     "email": email,
-                    "password": password
+                    "password": password,
+                    "coins": 0,
+                    "xp": 0
                 })
             })
             console.log(await postResponse.json())

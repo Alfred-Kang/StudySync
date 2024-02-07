@@ -5,12 +5,12 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 const apikey = "65b872123d3b7f1a90c26558"
 const apiurl = "https://studypal-c298.restdb.io/rest/studypalusers"
 
-// //check if user has logged in
-// if ((localStorage.getItem("id") == null)) {
-//   window.location.href = "/index.html";
-// } else {
-//   console.log('Logged in!')
-// }
+//check if user has logged in
+if ((localStorage.getItem("id") == null)) {
+  window.location.href = "/index.html";
+} else {
+  console.log('Logged in!')
+}
 
 //nav
 document.getElementById("userprofile").addEventListener("click", function() {
