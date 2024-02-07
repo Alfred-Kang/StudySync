@@ -7,7 +7,7 @@ const apiurl = "https://studypal-c298.restdb.io/rest/studypalusers"
 
 //check if user has logged in
 if ((localStorage.getItem("id") == null)) {
-  window.location.href = "/StudyPal/index.html";
+  window.location.href = "index.html";
 } else {
   console.log('Logged in!')
 }
@@ -27,20 +27,20 @@ document.getElementById("hamburgermenu").addEventListener("mouseover", function(
 
 const dashboardtoggle = document.getElementById("dashboardtoggle")
 dashboardtoggle.addEventListener("click", function() {
-  window.location.href = "/StudyPal/dashboard.html";
+  window.location.href = "dashboard.html";
 })
 
 //logout
 const logout = document.getElementById("logout")
 logout.addEventListener("click", function() {
   localStorage.clear();
-  window.location.href = "/StudyPal/index.html";
+  window.location.href = "index.html";
 })
 const logouthamburger = document.getElementById("logouthamburger")
 logouthamburger.addEventListener("click", function() {
   console.log('trest')
   localStorage.clear();
-  window.location.href = "/StudyPal/index.html";
+  window.location.href = "index.html";
 })
 
 document.getElementById("profileusername").innerHTML = localStorage.getItem("username")

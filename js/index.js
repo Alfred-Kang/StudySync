@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     //check if user is logged in
     if ((localStorage.getItem("id") !== null)) {
-        window.location.href = "./main.html";
+        window.location.href = "main.html";
     } else {
         console.log('Please Login')
     }
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 localStorage.setItem("room", data[i].room)
                 localStorage.setItem("studysessionactive", false)
 
-                window.location.href = "/StudyPal/main.html";
+                window.location.href = "main.html";
                 break;
             } else if (i>=data.length) {
                 alert('Username or Password is Incorrect! Please Try Again')
