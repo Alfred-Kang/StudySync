@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 localStorage.setItem("id", data[i]._id)
                 localStorage.setItem("username", data[i].username)
                 localStorage.setItem("email", data[i].email)
+                localStorage.setItem("password", data[i].password)
                 localStorage.setItem("xp", data[i].xp)
                 localStorage.setItem("coins", data[i].coins)
                 localStorage.setItem("studyhours", data[i].studyhours)

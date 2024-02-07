@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
-  <script src="js/index.js"></script>
+  <script type="module" src="js/index.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
   <title>StudyPal</title>
 </head>
@@ -74,14 +74,14 @@
               <label for="username" class="block text-2xl font-concert leading-6 text-dblue">Username</label>
             </div>
               <div class="mt-2">
-                <input id="username" name="username" type="text" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-2">
+                <input id="username" name="username" type="text" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-4">
               </div>
           </div>
 
           <div class="w-full h-auto">
             <label for="signupemail" class="font-concert block text-2xl leading-6 text-dblue">Email address</label>
             <div class="mt-2">
-              <input id="signupemail" name="signupemail" type="email" autocomplete="email" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-2">
+              <input id="signupemail" name="signupemail" type="email" autocomplete="email" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-4">
             </div>
           </div>
     
@@ -90,7 +90,7 @@
               <label for="signuppassword" class="block text-2xl font-concert leading-6 text-dblue">Password</label>
             </div>
               <div class="mt-2">
-                <input id="signuppassword" name="signuppassword" type="password" autocomplete="current-password" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-2">
+                <input id="signuppassword" name="signuppassword" type="password" autocomplete="current-password" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-4">
               </div>
           </div>
 
@@ -99,7 +99,7 @@
               <label for="signuppassword" class="block text-2xl font-concert leading-6 text-dblue">Confirm Password</label>
             </div>
               <div class="mt-2">
-                <input id="confirmpassword" name="confirmpassword" type="password" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-2">
+                <input id="confirmpassword" name="confirmpassword" type="password" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-4">
               </div>
           </div>
           <button type="submit" id="signupsubmitbutton" class="bg-dblue hover:bg-orange font-concert flex w-1/2 h-20 justify-center items-center rounded-full text-cream text-2xl">Sign Up</button>

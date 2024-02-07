@@ -9,78 +9,62 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
-  <script src="js/contact.js"></script>
+  <script type="module" src="js/contact.js"></script>
   <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
   <title>StudyPal</title>
 </head>
-  <body id="body" class="bg-dblue w-screen h-screen flex items-center justify-center flex-row">
-
-    <div id="cognifycontainer" class="bg-lblue w-1/3 h-5/6 rounded-3xl flex items-center flex-col m-2">
-      <h1 class="text-7xl font-concert text-cream m-12">
-        Cognify!
-      </h1>
-      <div id="membercontainer" class="w-full h-auto flex items-center justify-center flex-col">
-        <div id="alfcontainer" class="w-5/6 h-auto flex m-4 items-center">
-          <img class="w-28 h-28 rounded-full" src="images/contactus/alf.jpg" alt="Alfred Kang Jing Rui">
-          <div id="alfdetails" class="flex justify-center flex-col m-4">
-            <h1 class="text-4xl font-concert text-cream m-1">Alfred Kang</h1>
-            <h1 class="text-lg font-concert text-cream m-1">Project Manager</h1>
-            <a href="https://www.linkedin.com/in/alfredkangjr/" target="_blank"><i class="fa-brands fa-linkedin text-cream m-1 text-2xl"></i></a>
+  <body id="body" class="bg-dblue w-screen h-screen flex flex-col">
+    <div class="bg-dblue w-screen h-screen flex items-center justify-center md:flex-row flex-col">
+      <div id="cognifycontainer" class="bg-lblue md:w-1/3 w-4/5 h-5/6 rounded-3xl flex items-center flex-col m-2 p-4">
+        <h1 class="lg:text-7xl text-5xl font-concert text-cream lg:m-12 m-8">
+          Cognify!
+        </h1>
+        <div id="membercontainer" class="w-full h-auto flex items-center justify-center flex-col">
+          <div id="alfcontainer" class="w-5/6 h-auto flex lg:m-4 m-0 items-center lg:flex-row flex-col">
+            <img class="w-28 h-28 rounded-full" src="images/contactus/alf.jpg" alt="Alfred Kang Jing Rui">
+            <div id="alfdetails" class="flex justify-center flex-col m-4">
+              <h1 class="text-4xl font-concert text-cream m-1">Alfred Kang</h1>
+              <h1 class="text-lg font-concert text-cream m-1">Project Manager</h1>
+              <a href="https://www.linkedin.com/in/alfredkangjr/" target="_blank"><i class="fa-brands fa-linkedin text-cream m-1 text-2xl"></i></a>
+            </div>
           </div>
-        </div>
-        <div id="whcontainer" class="w-5/6 h-auto flex m-4 items-center">
-          <img class="w-28 h-28 rounded-full" src="images/contactus/wh.jpeg" alt="Lim Wee Han">
-          <div id="whdetails" class="flex justify-center flex-col m-4">
-            <h1 class="text-4xl font-concert text-cream m-1">Lim Wee Han</h1>
-            <h1 class="text-lg font-concert text-cream m-1">3D Modeller</h1>
-            <a href="https://www.linkedin.com/in/lim-wee-han-324882249/" target="_blank"><i class="fa-brands fa-linkedin text-cream m-1 text-2xl"></i></a>
+          <div id="whcontainer" class="w-5/6 h-auto flex lg:m-4 m-0 items-center lg:flex-row flex-col">
+            <img class="w-28 h-28 rounded-full" src="images/contactus/wh.jpeg" alt="Lim Wee Han">
+            <div id="whdetails" class="flex justify-center flex-col m-4">
+              <h1 class="text-4xl font-concert text-cream m-1">Lim Wee Han</h1>
+              <h1 class="text-lg font-concert text-cream m-1">3D Modeller</h1>
+              <a href="https://www.linkedin.com/in/lim-wee-han-324882249/" target="_blank"><i class="fa-brands fa-linkedin text-cream m-1 text-2xl"></i></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="contactcontainer" class="bg-lblue w-2/3 h-5/6 rounded-3xl flex items-center flex-col m-2">
-      <h1 class="text-6xl font-concert text-cream m-12">
-        Contact Us
-      </h1>
-      <div id="formcontainer" class="w-5/6 h-auto flex justify-center">
-        <div class="w-1/2 h-5/6 justify-center items-center justify-center">
-          <form id="contactForm" class="space-y-6 flex justify-center items-center flex-col">
-            <div class="w-full h-auto">
-              <div class="flex items-center justify-between">
-                <label for="username" class="block text-2xl font-concert leading-6 text-cream">Username</label>
-              </div>
-                <div class="mt-2">
-                  <input id="username" name="username" type="text" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-2">
+      <div id="contactcontainer" class="bg-lblue md:w-2/3 w-4/5 h-5/6  rounded-3xl flex items-center justify-between flex-col m-2 p-4">
+        <h1 class="h-1/5 text-6xl font-concert text-cream m-12">
+          Contact Us
+        </h1>
+        <div id="formcontainer" class="w-5/6 h-4/5 flex justify-center">
+          <div class="xl:w-1/2 w-3/4 h-5/6 justify-center items-center justify-center">
+            <form id="contactForm" class="space-y-6 flex justify-center items-center flex-col">
+              <div class="w-full h-auto">
+                <div class="flex items-center justify-between">
+                  <label for="name" required class="block text-2xl font-concert leading-6 text-cream">Name</label>
                 </div>
-            </div>
-  
-            <div class="w-full h-auto">
-              <label for="signupemail" class="font-concert block text-2xl leading-6 text-cream">Email address</label>
-              <div class="mt-2">
-                <input id="signupemail" name="signupemail" type="email" autocomplete="email" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-2">
+                  <div class="mt-2">
+                    <input id="name" name="name" type="text" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-4">
+                  </div>
               </div>
-            </div>
-      
-            <div class="w-full h-auto">
-              <div class="flex items-center justify-between">
-                <label for="signuppassword" class="block text-2xl font-concert leading-6 text-cream">Password</label>
-              </div>
-                <div class="mt-2">
-                  <input id="signuppassword" name="signuppassword" type="password" autocomplete="current-password" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-2">
+              <div class="w-full h-auto">
+                <div class="flex items-center justify-between">
+                  <label for="message" class="block text-2xl font-concert leading-6 text-cream">Message</label>
                 </div>
-            </div>
-  
-            <div class="w-full h-auto">
-              <div class="flex items-center justify-between">
-                <label for="signuppassword" class="block text-2xl font-concert leading-6 text-cream">Confirm Password</label>
+                  <div class="mt-2">
+                    <textarea id="message" class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-xl p-4" name="message" rows="4" cols="50"></textarea>
+                  </div>
               </div>
-                <div class="mt-2">
-                  <input id="confirmpassword" name="confirmpassword" type="password" required class="bg-orange font-concert block w-full h-18 rounded-3xl text-cream text-3xl p-2">
-                </div>
-            </div>
-            <button type="submit" id="signupsubmitbutton" class="bg-cream flex w-1/3 h-20 justify-center items-center rounded-full text-dblue text-2xl">Send</button>
-          </form>
+              <button type="submit" id="contactsubmitbtn" class="bg-dblue hover:bg-orange font-concert flex w-1/2 h-20 justify-center items-center rounded-full text-cream text-2xl">Send</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

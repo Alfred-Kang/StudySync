@@ -56,12 +56,15 @@ function endStudy() {
     localStorage.removeItem('studysessionxp')
 
     const postResponse = fetch(`https://studypal-c298.restdb.io/rest/studypalusers/${localStorage.getItem('id')}`, {
-        method: "PATCH",
+        method: "PUT",
         headers: {
             "Content-Type": "application/json",
             "x-apikey": apikey
         },
         body: JSON.stringify({
+            "username": localStorage.getItem('username'),
+            "password": localStorage.getItem('password'),
+            "email": localStorage.getItem('email'),
             "coins": localStorage.getItem('coins'),
             "xp": localStorage.getItem('xp')
         })
