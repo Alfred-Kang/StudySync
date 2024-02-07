@@ -78,6 +78,6 @@ document.getElementById("emaileditsubmit").addEventListener("click", async funct
     console.log(postResponse.jsondata)
 
     alert("Email Updated!")
-    window.location.href = "./dashboard.html";
+    window.location.href = "/StudyPal/dashboard.html";
 })
 

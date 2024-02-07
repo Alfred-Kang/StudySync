@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 localStorage.setItem("room", data[i].room)
                 localStorage.setItem("studysessionactive", false)
 
-                window.location.href = "./main.html";
+                window.location.href = "/StudyPal/main.html";
                 break;
             } else if (i>=data.length) {
                 alert('Username or Password is Incorrect! Please Try Again')
