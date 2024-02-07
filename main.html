@@ -11,6 +11,7 @@
   <link rel="manifest" href="favicon/site.webmanifest">
   <script type="module" src="js/main.js"></script>
   <script type="module" src="js/study.js"></script>
+  <script type="module" src="js/leaderboard.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
   <title>StudyPal</title>
@@ -29,7 +30,7 @@
           <!-- Dropdown menu -->
           <div class="z-50 w-1/6 h-lg hidden my-4 text-base list-none bg-orange divide-y divide-gray-100 rounded-lg shadow absolute top-16 right-24" id="userdropdown">
             <div class="px-4 py-3">
-              <span id="profileusername" class="block text-5xl text-cream font-concert">User</span>
+              <span id="profileusername" class="block text-4xl text-cream font-concert">User</span>
               <span id="profileemail" class="block text-xl text-cream font-concert">email@email.com</span>
             </div>
             <ul class="py-2">
@@ -56,16 +57,16 @@
             <a href="/main.html" class="block py-2 px-3 text-3xl font-concert bg-dblue rounded lg:bg-transparent lg:text-cream lg:p-0">Home</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-3 text-3xl font-concert text-cream rounded hover:bg-orange lg:hover:bg-transparent lg:hover:text-orange lg:p-0">Avatar</a>
+            <div id="navavatar" class="block py-2 px-3 text-3xl font-concert text-cream rounded hover:bg-orange lg:hover:bg-transparent lg:hover:text-orange lg:p-0">Avatar</div>
           </li>
           <li>
-            <a href="#" class="block py-2 px-3 text-3xl font-concert text-cream rounded hover:bg-orange lg:hover:bg-transparent lg:hover:text-orange lg:p-0">Room</a>
+            <div id="navroom" class="block py-2 px-3 text-3xl font-concert text-cream rounded hover:bg-orange lg:hover:bg-transparent lg:hover:text-orange lg:p-0">Room</div>
           </li>
           <li>
             <div id="navstudy" class="block py-2 px-3 text-3xl font-concert text-cream rounded hover:bg-orange lg:hover:bg-transparent lg:hover:text-orange lg:p-0 cursor-pointer">Study</div>
           </li>
           <li>
-            <a href="/leaderboard.html" class="block py-2 px-3 text-3xl font-concert text-cream rounded hover:bg-orange lg:hover:bg-transparent lg:hover:text-orange lg:p-0">Leaderboard</a>
+            <div id="navleaderboard" class="block py-2 px-3 text-3xl font-concert text-cream rounded hover:bg-orange lg:hover:bg-transparent lg:hover:text-orange lg:p-0">Leaderboard</div>
           </li>
           <li>
             <a href="/contact.html" class="block py-2 px-3 text-3xl font-concert text-cream rounded hover:bg-orange lg:hover:bg-transparent lg:hover:text-orange lg:p-0">Contact</a>
@@ -79,12 +80,32 @@
         <h1 id="welcomename" class="text-7xl font-concert text-cream m-4">Welcome, User!</h1>
       <div class="w-1/5 rounded-full h-10 bg-dblue flex items-center justify-center m-4">
         <h1 id="leveldisplay" class="text-xl font-concert text-cream m-4">Level: 1</h1>
-        <div class="w-1/2 rounded-full h-5 bg-cream flex items-center">
-          <div class="bg-orange h-5 rounded-full flex items-center justify-center font-concert text-cream text-sm" style="width: 45%">45%</div>
+        <div class="w-1/2 rounded-3xl h-5 bg-cream flex items-center">
+          <div id='progbar' class="bg-orange h-5 rounded-3xl flex items-center justify-center font-concert text-cream text-sm" style="width: 10%">10%</div>
         </div>
       </div>
       </div>
       <div id="room3d" class="w-full h-full"></div>
+    </div>
+
+    <div id='leaderboardcontainer' class="relative hidden z-50">
+      <div class="fixed inset-0 bg-gray-700 bg-opacity-90 transition-opacity"></div>
+      <div class="fixed inset-0 z-50 w-screen overflow-hidden">
+        <div class="flex h-screen items-end justify-center p-4 text-center sm:items-center sm:p-0">
+
+          <div class="flex flex-col justify-center items-center transform overflow-hidden rounded-xl bg-dblue shadow-xl sm:my-8 lg:w-11/12 w-screen h-5/6">
+            <div class="flex flex-row justify-center items-center h-1/6">
+              <div class="text-cream text-6xl font-concert">Leaderboard</div>
+              <svg id='closeleaderboardcontainer' class="w-12 h-12 text-cream m-8" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+            </div>
+            <div class="flex flex-row justify-center items-center h-1/6">
+              <div id='leaderboardbtn' class="bg-cream p-8 rounded-full text-dblue text-3xl font-concert cursor-pointer hover:bg-orange hover:text-cream">Start Studying!</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id='studycontainer' class="relative hidden z-50">
@@ -92,7 +113,7 @@
       <div class="fixed inset-0 z-50 w-screen overflow-hidden">
         <div class="flex h-screen items-end justify-center p-4 text-center sm:items-center sm:p-0">
 
-          <div class="flex flex-col justify-center items-center transform overflow-hidden rounded-xl bg-dblue shadow-xl sm:my-8 w-5/6 h-5/6">
+          <div class="flex flex-col justify-center items-center transform overflow-hidden rounded-xl bg-dblue shadow-xl sm:my-8 lg:w-5/6 w-screen h-5/6">
             <div class="flex flex-row justify-center items-center h-1/6">
               <div class="text-cream text-6xl font-concert">Study</div>
               <svg id='closestudycontainer' class="w-12 h-12 text-cream m-8" fill="none" viewBox="0 0 14 14">
@@ -116,19 +137,19 @@
               [&::-webkit-slider-runnable-track]:h-2
               [&::-webkit-slider-runnable-track]:bg-lblue
               [&::-webkit-slider-runnable-track]:rounded-full" min="1" max="5" step="1">
-              <div class="bg-orange w-3/4 h-1/2 rounded-3xl m-4 flex justify-center items-center flex-row">
-                <div class="font-concert text-4xl text-cream m-4 w-1/3">
+              <div class="bg-orange md:w-3/4 w-11/12 h-1/2 rounded-3xl m-4 flex justify-center items-center flex-row">
+                <div class="font-concert md:text-4xl text-2xl text-cream m-4 w-1/3">
                   Rewards:
                 </div>
                 <div class="flex w-1/3 justify-center items-center flex-col m-2">
                   <i class="fa-solid fa-coins text-cream fa-2xl m-4"></i>
-                  <div id='coinsearned' class="font-concert text-3xl text-cream m-2">
+                  <div id='coinsearned' class="font-concert md:text-3xl text-xl text-cream m-2">
                     30 Coins
                   </div>
                 </div>
                 <div class="flex w-1/3 justify-center items-center flex-col m-2">
                   <i class="fa-solid fa-book-open text-cream fa-2xl m-4"></i>
-                  <div id='xpearned' class="font-concert text-3xl text-cream m-2">
+                  <div id='xpearned' class="font-concert md:text-3xl text-xl text-cream m-2   ">
                     30,000 XP
                   </div>
                 </div>
@@ -208,31 +229,30 @@
     <div id='rewardcontainer' class="relative hidden z-50">
       <div class="fixed inset-0 bg-gray-700 bg-opacity-90 transition-opacity"></div>
       <div class="fixed inset-0 z-50 w-screen overflow-hidden">
-        <div class="flex h-screen items-end justify-center p-4 text-center sm:items-center sm:p-0">
-
-          <div class="flex flex-col justify-center items-center transform overflow-hidden rounded-xl bg-dblue shadow-xl sm:my-8 w-5/6 h-5/6">
-            <div class="flex flex-row justify-center items-center h-1/6">
-              <div class="text-cream text-6xl font-concert">Study Session Complete!</div>
-              <svg id='closerewardcontainer' class="w-12 h-12 text-cream m-8" fill="none" viewBox="0 0 14 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-              </svg>
+        <div class="flex h-screen justify-center text-center items-center p-0">
+          <div class="flex flex-col justify-center items-center transform overflow-hidden rounded-xl bg-dblue shadow-xl my-8 md:w-5/6 md:h-4/6 w-screen h-5/6">
+            <div class="flex flex-row justify-center items-center h-1/6 m-8">
+              <div class="text-cream text-5xl font-concert">Study Session Complete!</div>
             </div>
-            <div class="bg-orange w-3/4 h-full rounded-3xl m-4 flex justify-center items-center flex-row">
-              <div class="font-concert text-4xl text-cream m-4 w-1/3">
+            <div class="bg-orange w-3/4 h-full rounded-3xl my-4 flex justify-center items-center lg:flex-row flex-col p-6">
+              <div class="flex justify-center items-center font-concert lg:text-6xl text-4xl text-cream w-1/2 h-full">
                 Rewards:
               </div>
-              <div class="flex w-1/3 justify-center items-center flex-col m-2">
-                <i class="fa-solid fa-coins text-cream fa-2xl m-4"></i>
+              <div class="flex w-1/4 h-full justify-center items-center lg:flex-col flex-row m-2">
+                <i class="fa-solid fa-coins text-cream fa-2xl my-4"></i>
                 <div id='coinsreward' class="font-concert text-3xl text-cream m-2">
                   30 Coins
                 </div>
               </div>
-              <div class="flex w-1/3 justify-center items-center flex-col m-2">
-                <i class="fa-solid fa-book-open text-cream fa-2xl m-4"></i>
+              <div class="flex w-1/4 h-full justify-center items-center lg:flex-col flex-row m-2">
+                <i class="fa-solid fa-book-open text-cream fa-2xl my-4"></i>
                 <div id='xpreward' class="font-concert text-3xl text-cream m-2">
                   30,000 XP
                 </div>
               </div>
+            </div>
+            <div class="flex flex-row justify-center items-center h-1/6 m-8">
+              <div id='closerewardcontainer' class="bg-cream p-8 rounded-full text-dblue text-3xl font-concert cursor-pointer hover:bg-orange hover:text-cream">Collect Rewards</div>
             </div>
           </div>
         </div>

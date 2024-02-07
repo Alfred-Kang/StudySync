@@ -97,7 +97,7 @@ function updateTimeDisplay() {
     document.getElementById('studycontainer').classList.toggle('hidden')
     document.getElementById('studysessioncontainer').classList.toggle('hidden')
     // updateTimeDisplay.refresh = setInterval(updateTime,1000)
-    endStudy() //CHANGE
+    endStudy() //change before submission
 }
 
 document.getElementById('startstudybtn').addEventListener('click', updateTimeDisplay)

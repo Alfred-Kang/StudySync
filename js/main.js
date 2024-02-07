@@ -25,6 +25,12 @@ document.getElementById("hamburgermenu").addEventListener("click", function() {
   document.getElementById("stupallogo").classList.toggle("drop-shadow-2xl")
 })
 
+//lvl calculator
+document.getElementById("leveldisplay").innerHTML = `Level: ${Math.floor(localStorage.getItem('xp')/50000)}`
+let progress = ((localStorage.getItem('xp')%50000)/50000)*100
+document.getElementById("progbar").style.width = `${progress}%`
+document.getElementById("progbar").innerHTML = `${progress}%`
+
 //logout
 document.getElementById("logout").addEventListener("click", function() {
   localStorage.clear();
