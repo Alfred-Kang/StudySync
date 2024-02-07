@@ -52,6 +52,7 @@ function endStudy() {
     
     localStorage.setItem('coins',Number(localStorage.getItem('coins'))+Number(localStorage.getItem('studysessioncoins')))
     localStorage.setItem('xp',Number(localStorage.getItem('xp'))+Number(localStorage.getItem('studysessionxp')))
+    localStorage.setItem('studyhours',Number(localStorage.getItem('coins'))/10)
     localStorage.removeItem('studysessioncoins')
     localStorage.removeItem('studysessionxp')
 
@@ -65,12 +66,12 @@ function endStudy() {
             "username": localStorage.getItem('username'),
             "password": localStorage.getItem('password'),
             "email": localStorage.getItem('email'),
+            "studyhours": localStorage.getItem('studyhours'),
             "coins": localStorage.getItem('coins'),
             "xp": localStorage.getItem('xp')
         })
     })
     console.log(postResponse.jsondata)
-    console.log(localStorage)
 }
 
 function stopTimeDisplay() {

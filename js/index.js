@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     var type = new Typed(".typingcaption", {
-        strings: ["Infinite Customization Potential.", "Track. Learn. Grow.", "Climb The Leaderboards."],
+        strings: ["Infinite Customization Potential.", "Your Journey, Your Rules.", "Track, Learn, Lead."],
         typeSpeed: 50,
         backSpeed: 25,
         loop: true

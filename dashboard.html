@@ -14,15 +14,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
   <title>StudyPal</title>
 </head>
-  <body id="body" class="bg-dblue w-screen h-screen flex flex-col">
-    <div class="bg-dblue w-screen h-screen flex items-center justify-center md:flex-row flex-col">
-      <div id="detailscontainer" class="bg-lblue md:w-1/3 w-4/5 h-5/6 rounded-3xl flex items-center flex-col m-2 p-4">
-        
-      </div>
-      <div id="statsconta.iner" class="bg-lblue md:w-2/3 w-4/5 h-5/6  rounded-3xl flex items-center justify-between flex-col m-2 p-4">
+  <body id="body" class="overflow-hidden bg-dblue w-screen h-screen flex flex-col items-center justify-center md:flex-row flex-col">
+    <div id="detailscontainer" class="bg-orange w-2/5 h-5/6 rounded-3xl flex items-center justify-center flex-col m-4">
+        <label for="uploadpfp" class="relative flex w-72 h-1/2 justify-end items-center">
+          <img id='dashboardpfp' class='w-72 h-72 rounded-full absolute' src="/images/stupal.png" alt='Profile Picture'>
+          <div class="w-72 h-72 group hover:bg-cream opacity-60 rounded-full absolute flex justify-center items-center cursor-pointer transition duration-500">
+            <img class="hidden group-hover:block w-12" src="https://www.svgrepo.com/show/33565/upload.svg" alt="" />
+          </div>
+        </label>
+        <div class="flex h-1/2 flex-col items-center">
+          <input id="uploadpfp" type="file" class="hidden"/>
 
+          <div id='dashboardusername' class="flex items-center text-cream font-concert text-9xl m-12">User</div>
+          <form id="editusernamefield" class="hidden space-y-6 flex justify-center items-center flex-col">
+            <div class="w-full h-auto">
+              <div class="flex items-center justify-between">
+                <label for="name" required class="block text-3xl font-concert leading-6 text-cream">Enter New Username:</label>
+              </div>
+                <div class="mt-2">
+                  <input id="usernameinput" name="name" type="text" required class="bg-cream font-concert block w-full h-18 rounded-3xl text-dblue text-3xl p-4">
+                </div>
+            </div>
+            <button type="submit" id="usernameeditsubmit" class="bg-dblue hover:bg-dorange font-concert flex w-1/2 h-20 justify-center items-center rounded-full text-cream text-2xl">Update</button>
+          </form>  
+
+          <div id='dashboardemail' class="flex items-center text-cream font-concert text-3xl m-12">Email</div>
+          <form id="editemailfield" class="hidden space-y-6 flex justify-center items-center flex-col">
+            <div class="w-full h-auto">
+              <div class="flex items-center justify-between">
+                <label for="name" required class="block text-3xl font-concert leading-6 text-cream">Enter New Email:</label>
+              </div>
+                <div class="mt-2">
+                  <input id="emailinput" name="name" type="text" required class="bg-cream font-concert block w-full h-18 rounded-3xl text-dblue text-3xl p-4">
+                </div>
+            </div>
+            <button type="submit" id="emaileditsubmit" class="bg-dblue hover:bg-dorange font-concert flex w-1/2 h-20 justify-center items-center rounded-full text-cream text-2xl">Update</button>
+          </form>
+          
+        </div>
+    </div>
+    <div id='rightdashboard' class="w-3/5 h-5/6 flex flex-col m-4 justify-between">
+      <div id="statscontainer" class="bg-cream w-full h-1/3 rounded-3xl flex items-center justify-center flex-row my-4">
+        <div id='dashboardlevel' class="w-1/3 h-full text-dblue flex items-center justify-center font-concert text-5xl">Level</div>
+        <div id='dashboardcoins' class="w-1/3 h-full text-dblue flex items-center justify-center font-concert text-5xl">Coins</div>
+        <div id='dashboardstudyhrs' class="w-1/3 h-full text-dblue flex items-center justify-center font-concert text-5xl">Hours</div>
       </div>
-      <div id="tbccontainer" class="bg-lblue md:w-1/3 w-4/5 h-5/6 rounded-3xl flex items-center flex-col m-2 p-4">
+      <div id="tbccontainer" class="bg-cream w-full h-2/3 rounded-3xl flex items-center flex-col my-4">
         
       </div>
     </div>
