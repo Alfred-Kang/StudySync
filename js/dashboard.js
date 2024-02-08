@@ -52,7 +52,7 @@ document.getElementById("usernameeditsubmit").addEventListener("click", async fu
     console.log(postResponse.jsondata)
 
     alert("Username Updated!")
-    window.location.href = "/StudyPal/dashboard.html";
+    window.location.href = "dashboard.html";
 })
 
 document.getElementById("emaileditsubmit").addEventListener("click", async function(e) {
