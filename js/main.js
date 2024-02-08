@@ -60,6 +60,19 @@ document.getElementById("profileemail").innerHTML = localStorage.getItem("email"
 // 3D Integration
 
 //render
+
+let roomPath
+
+if (JSON.parse(localStorage.getItem("avatar")).avatar1 == 'active' && JSON.parse(localStorage.getItem("room")).room1 == 'active') {
+  roomPath = 'room1-avatar1.glb'
+} else if (JSON.parse(localStorage.getItem("avatar")).avatar1 == 'active' && JSON.parse(localStorage.getItem("room")).room2 == 'active') {
+  roomPath = 'room2-avatar1.glb'
+} else if (JSON.parse(localStorage.getItem("avatar")).avatar2 == 'active' && JSON.parse(localStorage.getItem("room")).room1 == 'active') {
+  roomPath = 'room1-avatar2.glb'
+} else if (JSON.parse(localStorage.getItem("avatar")).avatar2 == 'active' && JSON.parse(localStorage.getItem("room")).room2 == 'active') {
+  roomPath = 'room2-avatar2.glb'
+}
+
 const renderer = new THREE.WebGLRenderer({ antialias: true })
 renderer.outputColorSpace = THREE.SRGBColorSpace
 
@@ -96,8 +109,7 @@ const light = new THREE.AmbientLight(0x404040,20) // soft white light
 scene.add(light)
 
 const loader = new GLTFLoader().setPath('models/')
-loader.load('room1-avatar1.glb', (gltf) => {
-  console.log('loading')
+loader.load(roomPath, (gltf) => {
   const mesh = gltf.scene
 
   mesh.traverse((child) => {

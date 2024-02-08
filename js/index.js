@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         })
         const data = await sendResponse.json()
+        console.log(data)
         
         //login validation
         for (let i = 0; i < data.length; i++) {
@@ -46,9 +47,10 @@ document.addEventListener("DOMContentLoaded", async function () {
                 localStorage.setItem("xp", data[i].xp)
                 localStorage.setItem("coins", data[i].coins)
                 localStorage.setItem("studyhours", data[i].studyhours)
-                localStorage.setItem("avatar", data[i].avatar)
-                localStorage.setItem("room", data[i].room)
+                localStorage.setItem("avatar", JSON.stringify(data[i].avatar))
+                localStorage.setItem("room", JSON.stringify(data[i].room))
                 localStorage.setItem("studysessionactive", false)
+                console.log(localStorage)
 
                 window.location.href = "main.html";
                 break;
@@ -83,7 +85,16 @@ document.addEventListener("DOMContentLoaded", async function () {
                     "email": email,
                     "password": password,
                     "coins": 0,
-                    "xp": 0
+                    "xp": 0,
+                    "studyhours": 0,
+                    "avatar": JSON.stringify({
+                        "avatar1": 'active',
+                        "avatar2": 'disabled'
+                    }),
+                    "room": JSON.stringify({
+                        "room1": 'active',
+                        "room2": 'disabled'
+                    })
                 })
             })
             console.log(await postResponse.json())
