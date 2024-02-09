@@ -13,6 +13,16 @@ if ((localStorage.getItem("id") == null)) {
 }
 
 //nav
+let pfpPath
+if (JSON.parse(localStorage.getItem("avatar")).avatar1 == 'active') {
+  pfpPath = 'images/pfps/avatar1pfp.png'
+} else if (JSON.parse(localStorage.getItem("avatar")).avatar2== 'active') {
+  pfpPath = 'images/pfps/avatar2pfp.png'
+} else {
+  pfpPath = 'images/stupal.png'
+}
+document.getElementById('userpfp').src = pfpPath
+
 document.getElementById("userprofile").addEventListener("mouseover", function() {
   document.getElementById("userdropdown").classList.toggle("hidden")
 })

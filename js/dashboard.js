@@ -1,11 +1,26 @@
 const apikey = "65b872123d3b7f1a90c26558"
 
+let pfpPath
+if (JSON.parse(localStorage.getItem("avatar")).avatar1 == 'active') {
+  pfpPath = 'images/pfps/avatar1pfp.png'
+} else if (JSON.parse(localStorage.getItem("avatar")).avatar2== 'active') {
+  pfpPath = 'images/pfps/avatar2pfp.png'
+} else {
+  pfpPath = 'images/stupal.png'
+}
+
+document.getElementById('dashboardpfp').src = pfpPath
+
 document.getElementById('dashboardusername').innerHTML = `${localStorage.getItem('username')}  <i id='editusername' class="hidden text-2xl fa-solid fa-pen-to-square fa-beat mx-8">`
 document.getElementById('dashboardemail').innerHTML = `${localStorage.getItem('email')}  <i id='editemail' class="hidden text-2xl fa-solid fa-pen-to-square fa-beat mx-8">`
 
-document.getElementById('dashboardlevel').innerHTML = `<i class="text-orange fa-2xl fa-solid fa-book-open m-8"></i> Level<br>${Math.floor(localStorage.getItem('xp')/50000)}`
-document.getElementById('dashboardcoins').innerHTML = `<i class="text-orange fa-2xl fa-solid fa-coins m-8"></i> Coins<br>${localStorage.getItem('coins')}`
-document.getElementById('dashboardstudyhrs').innerHTML = `<i class="text-orange fa-2xl fa-solid fa-graduation-cap m-8"></i> Hours<br>${localStorage.getItem('studyhours')}`
+document.getElementById('dashboardlevel').innerHTML = `<i class="text-orange fa-2xl fa-solid fa-book-open xl:m-8 m-5"></i> Level<br>${Math.floor(localStorage.getItem('xp')/50000)}`
+document.getElementById('dashboardcoins').innerHTML = `<i class="text-orange fa-2xl fa-solid fa-coins xl:m-8 m-5"></i> Coins<br>${localStorage.getItem('coins')}`
+document.getElementById('dashboardstudyhrs').innerHTML = `<i class="text-orange fa-2xl fa-solid fa-graduation-cap xl:m-8 m-5"></i> Hours<br>${localStorage.getItem('studyhours')}`
+
+document.getElementById('dashboardback').addEventListener('click', function() {
+    window.location.href = 'main.html'
+})
 
 document.getElementById('dashboardusername').addEventListener('mouseover', function() {
     document.getElementById('editusername').classList.toggle('hidden')
@@ -31,9 +46,6 @@ document.getElementById('dashboardemail').addEventListener('click', function() {
 
 document.getElementById("usernameeditsubmit").addEventListener("click", async function(e) {
     e.preventDefault()
-
-    //TODO throw errors if username or email is not unique in db
-    //Check PW before changing detail
 
     localStorage.setItem("username", document.getElementById("usernameinput").value)
 

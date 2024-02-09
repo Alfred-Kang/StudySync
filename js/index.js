@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         })
         const data = await sendResponse.json()
         console.log(data)
+
+        //ERROR FIX: Login Fail no Error
         
         //login validation
         for (let i = 0; i < data.length; i++) {
@@ -64,7 +66,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.log('signup btn clicked')
 
         //TODO throw errors if username or email is not unique in db
-
+        //TODO FIX: code runs even if fields are not filled 
         let username = document.getElementById("username").value;
         let email = document.getElementById("signupemail").value;
         let password = document.getElementById("signuppassword").value;
@@ -100,9 +102,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             console.log(await postResponse.json())
 
             alert("Account Created, Login!")
-            body.classList.replace("justify-center","justify-end")
-            signupctn.classList.toggle("hidden")
-            loginctn.classList.toggle("hidden")
+            window.location.href='index.html'
         }
     })
 

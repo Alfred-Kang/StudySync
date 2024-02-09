@@ -38,7 +38,7 @@ document.getElementById('roomroom').addEventListener('click', function() {
     if (JSON.parse(localStorage.getItem("room")).room2 == 'inactive') {
         activeSelected = 'room'
         refreshroom(activeSelected, activeSelectedPath)
-    } else {
+    } else if (JSON.parse(localStorage.getItem("room")).room2 == 'disabled'){
         console.log('Locked!')
         if (localStorage.getItem('coins') >= 100) {
             document.getElementById('roompurchasecontainer').classList.toggle('hidden')

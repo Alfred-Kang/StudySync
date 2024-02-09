@@ -38,8 +38,7 @@ document.getElementById('jerryavatar').addEventListener('click', function() {
     if (JSON.parse(localStorage.getItem("avatar")).avatar2 == 'inactive') {
         activeSelected = 'Jerry'
         refreshAvatar(activeSelected, activeSelectedPath)
-    } else {
-        console.log('Locked!')
+    } else if (JSON.parse(localStorage.getItem("avatar")).avatar2 == 'disabled'){
         if (localStorage.getItem('coins') >= 100) {
             document.getElementById('avatarpurchasecontainer').classList.toggle('hidden')
         } else {

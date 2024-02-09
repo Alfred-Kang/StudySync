@@ -10,19 +10,31 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
+  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+      }
+    }
+  </script>
   <script type="module" src="js/index.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
   <title>StudyPal</title>
 </head>
   <body id="body" class="w-screen h-screen bg-lblue flex justify-center flex-row">
     <div id="startcontainer" class="lg:w-3/5 lg:block sm:w-1/2 sm:block hidden h-screen bg-dblue">
-      <div class="flex flex-row items-center">
+      <div class="flex flex-row items-center h-1/6 mx-4">
         <img class="w-12 h-12 drop-shadow-md rounded-2xl m-4" id="loginlogo" src="images/stupal.png" alt="StudyPal">
         <h1 class="text-3xl font-concert text-cream">
           StudyPal!
         </h1>
       </div>
-      <h1 class="font-concert text-cream xl:text-8xl lg:text-7xl text-4xl m-12">StudyPal, <br><span class="typingcaption"></span></h1>
+      <div class="h-4/6 flex justify-center items-center">
+        <h1 class="font-concert text-cream xl:text-8xl lg:text-5xl text-4xl m-12"><span class="typingcaption"></span></h1>
+      </div>
+      <div class="h-1/6 flex justify-center items-center"></div>
     </div>
     <div id="accountcontainer" class="lg:w-2/5 sm:w-1/2 w-screen h-screen bg-cream flex items-center justify-center flex-col">
       <div id="signuplogincontainer" class="flex w-full h-full items-center justify-center flex-col">
