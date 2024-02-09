@@ -100,8 +100,7 @@ function updateTimeDisplay() {
     localStorage.setItem('studysessionxp',(document.getElementById('hourslider').value)*10000)
     document.getElementById('studycontainer').classList.toggle('hidden')
     document.getElementById('studysessioncontainer').classList.toggle('hidden')
-    // updateTimeDisplay.refresh = setInterval(updateTime,1000)
-    endStudy() //change before submission
+    updateTimeDisplay.refresh = setInterval(updateTime,1000)
 }
 
 document.getElementById('startstudybtn').addEventListener('click', updateTimeDisplay)

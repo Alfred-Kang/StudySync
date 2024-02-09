@@ -34,9 +34,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         const data = await sendResponse.json()
         console.log(data)
 
-        //ERROR FIX: Login Fail no Error
-        
-        //login validation
         for (let i = 0; i < data.length; i++) {
             if (data[i].email == email && data[i].password == password) {
                 console.log("Login Succesful!")
@@ -65,8 +62,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         e.preventDefault()
         console.log('signup btn clicked')
 
-        //TODO throw errors if username or email is not unique in db
-        //TODO FIX: code runs even if fields are not filled 
         let username = document.getElementById("username").value;
         let email = document.getElementById("signupemail").value;
         let password = document.getElementById("signuppassword").value;

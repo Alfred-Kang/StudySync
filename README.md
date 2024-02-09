@@ -28,38 +28,46 @@ Not to mention, the 3D room feature provided by Bondee greatly aligns with what 
 
 ### Existing Features
 
-#### Start Page
-- 
-
 #### Login Signup Pages
 - Account Login 
 - Account Signup
 
 #### Home/Main Page
-- 
+- 3D Room
+- 3D Avatar
+- Level
+- Navigation Bar
 
 #### Avatar Customisation Page
-- 
+- Avatar Customisation
+- Avatar Preview
+- Avatar Purchase
 
 #### Room Customisation Page
-- 
+- Room Customisation
+- Room Preview
+- Room Purchase
 
 #### Leaderboard Page
-- 
+- Leaderboard (Top 5 + User)
 
 #### Studying Page
-- 
+- Start Study Session
+- Preview Rewards Earned
+- Timer till session end
+- Timer Media Controls (Stop, Pause, Continue)
+- Anti Focus Detector
 
 #### Contact Page
-- Cognify Team (Name, Linkedin, Role)
+- Cognify Logo
+- Cognify Team (Name, Linkedin, Artstation, Github, Role)
 - Text input fields for name, email, message
 - Form Submission
 
 #### Dashboard Page
-- 
-
-#### Details Page
-- 
+- Change User
+- Change Email
+- View Statistics
 
 ### Features Left to Implement
 
@@ -141,12 +149,10 @@ Record Study Hours, Customise Avatar and Room, Compete with Others
 11. Github Repository
 12. Github Pages
 13. RestDB Database
+14. Media Queries
 
 
 ## Credits
-### Content/Media
-- 
-
 ### Acknoledgements
 - I received inspiration for this project from [Yeolpumta](https://apps.apple.com/us/app/ypt-yeolpumta/id1441909643), [Forest](https://www.forestapp.cc/), and [Bondee](https://bondee.com/main).
 
