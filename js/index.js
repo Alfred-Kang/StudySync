@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     //check if user is logged in
     if ((localStorage.getItem("id") !== null)) {
         window.location.href = "main.html";
-    } else {
-        console.log('Please Login')
-    }
+    } 
 
     var type = new Typed(".typingcaption", {
         strings: ["Infinite Customization Potential.", "Your Journey, Your Rules.", "Track, Learn, Lead."],
@@ -19,7 +17,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     document.getElementById("loginsubmitbutton").addEventListener("click", async function(e) {
         e.preventDefault()
-        console.log('login btn clicked')
 
         let email = document.getElementById("loginemail").value;
         let password = document.getElementById("loginpassword").value;
@@ -32,11 +29,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         })
         const data = await sendResponse.json()
-        console.log(data)
 
         for (let i = 0; i < data.length; i++) {
             if (data[i].email == email && data[i].password == password) {
-                console.log("Login Succesful!")
 
                 //saving id to localstorage to save session login
                 localStorage.setItem("id", data[i]._id)
@@ -49,7 +44,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                 localStorage.setItem("avatar", JSON.stringify(data[i].avatar))
                 localStorage.setItem("room", JSON.stringify(data[i].room))
                 localStorage.setItem("studysessionactive", false)
-                console.log(localStorage)
 
                 window.location.href = "main.html";
                 break;
@@ -60,7 +54,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     })
     document.getElementById("signupsubmitbutton").addEventListener("click", async function(e) {
         e.preventDefault()
-        console.log('signup btn clicked')
 
         let username = document.getElementById("username").value;
         let email = document.getElementById("signupemail").value;
@@ -94,7 +87,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                     })
                 })
             })
-            console.log(await postResponse.json())
 
             alert("Account Created, Login!")
             window.location.href='index.html'

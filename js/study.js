@@ -38,7 +38,6 @@ function updateTime() {
             localStorage.setItem('studysessionsec',localStorage.getItem('studysessionsec')-1)
         }
       } else {
-        console.log('Stay Focused!')
         document.getElementById('focuscontainer').classList.remove("hidden")
       }
 }
@@ -71,7 +70,6 @@ function endStudy() {
             "xp": localStorage.getItem('xp')
         })
     })
-    console.log(postResponse.jsondata)
 }
 
 function stopTimeDisplay() {

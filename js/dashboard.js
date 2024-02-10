@@ -3,9 +3,7 @@ const apikey = "65b872123d3b7f1a90c26558"
 //check if user has logged in
 if ((localStorage.getItem("id") == null)) {
     window.location.href = "index.html"
-  } else {
-    console.log('Logged in!')
-  }
+  } 
 
 let pfpPath
 if (JSON.parse(localStorage.getItem("avatar")).avatar1 == 'active') {
@@ -68,7 +66,6 @@ document.getElementById("usernameeditsubmit").addEventListener("click", async fu
             "email": localStorage.getItem('email'),
         })
     })
-    console.log(postResponse.jsondata)
 
     alert("Username Updated!")
     window.location.href = "dashboard.html";
@@ -94,7 +91,6 @@ document.getElementById("emaileditsubmit").addEventListener("click", async funct
             "email": localStorage.getItem('email'),
         })
     })
-    console.log(postResponse.jsondata)
 
     alert("Email Updated!")
     window.location.href = "dashboard.html";

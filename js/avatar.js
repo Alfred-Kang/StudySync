@@ -11,8 +11,6 @@ let activeSelectedPath
 document.getElementById('navavatar').addEventListener('click', async function() {
     document.getElementById('avatarcontainer').classList.toggle('hidden')
 
-    console.log(JSON.parse(localStorage.getItem("avatar")).avatar2)
-
     if (JSON.parse(localStorage.getItem("avatar")).avatar2 !== "disabled" && document.getElementById('jerrylock').classList.contains("hidden") == false){
         document.getElementById('jerrylock').classList.add('hidden')
     }
@@ -67,7 +65,6 @@ document.getElementById('avatarpurchasesubmit').addEventListener('click', functi
                 "avatar": localStorage.getItem('avatar'),
             })
         })
-        console.log(postResponse.jsondata)
 
     document.getElementById('avatarpurchasecontainer').classList.toggle('hidden')
     document.getElementById('avatarcontainer').classList.toggle('hidden')
@@ -84,7 +81,6 @@ function refreshAvatar(activeSelected, activeSelectedPath) {
     } else if (activeSelected == 'Jerry') {
         activeSelectedPath = 'avatar2.glb'
     }
-    console.log(activeSelected,activeSelectedPath)
 
     document.getElementById("selectedavatartext").innerHTML = `SELECTED: ${activeSelected}`
 
@@ -157,7 +153,6 @@ function refreshAvatar(activeSelected, activeSelectedPath) {
 }
 
 document.getElementById('avatareditsubmit').addEventListener('click', async function() {
-    console.log(activeSelected)
     if (activeSelected == 'Jeremy') {
         localStorage.setItem('avatar', JSON.stringify({
             "avatar1": 'active',
@@ -184,7 +179,6 @@ document.getElementById('avatareditsubmit').addEventListener('click', async func
                 "avatar": localStorage.getItem('avatar'),
             })
         })
-        console.log(postResponse.jsondata)
         
     window.location.href = 'main.html'
 })

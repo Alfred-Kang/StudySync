@@ -8,9 +8,7 @@ const apiurl = "https://studypal-c298.restdb.io/rest/studypalusers"
 //check if user has logged in
 if ((localStorage.getItem("id") == null)) {
   window.location.href = "index.html"
-} else {
-  console.log('Logged in!')
-}
+} 
 
 //nav
 let pfpPath
@@ -48,7 +46,6 @@ logout.addEventListener("click", function() {
 })
 const logouthamburger = document.getElementById("logouthamburger")
 logouthamburger.addEventListener("click", function() {
-  console.log('trest')
   localStorage.clear()
   window.location.href = "index.html"
 })

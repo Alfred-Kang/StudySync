@@ -11,8 +11,6 @@ let activeSelectedPath
 document.getElementById('navroom').addEventListener('click', async function() {
     document.getElementById('roomcontainer').classList.toggle('hidden')
 
-    console.log(JSON.parse(localStorage.getItem("room")).room2)
-
     if (JSON.parse(localStorage.getItem("room")).room2 !== "disabled" && document.getElementById('roomlock').classList.contains("hidden") == false){
         document.getElementById('roomlock').classList.add('hidden')
     }
@@ -39,7 +37,6 @@ document.getElementById('roomroom').addEventListener('click', function() {
         activeSelected = 'room'
         refreshroom(activeSelected, activeSelectedPath)
     } else if (JSON.parse(localStorage.getItem("room")).room2 == 'disabled'){
-        console.log('Locked!')
         if (localStorage.getItem('coins') >= 100) {
             document.getElementById('roompurchasecontainer').classList.toggle('hidden')
         } else {
@@ -68,7 +65,6 @@ document.getElementById('roompurchasesubmit').addEventListener('click', function
                 "room": localStorage.getItem('room'),
             })
         })
-        console.log(postResponse.jsondata)
 
     document.getElementById('roompurchasecontainer').classList.toggle('hidden')
     document.getElementById('roomcontainer').classList.toggle('hidden')
@@ -85,7 +81,6 @@ function refreshroom(activeSelected, activeSelectedPath) {
     } else if (activeSelected == 'room') {
         activeSelectedPath = 'room2.glb'
     }
-    console.log(activeSelected,activeSelectedPath)
 
     document.getElementById("selectedroomtext").innerHTML = `SELECTED: ${activeSelected}`
 
@@ -158,7 +153,6 @@ function refreshroom(activeSelected, activeSelectedPath) {
 }
 
 document.getElementById('roomeditsubmit').addEventListener('click', async function() {
-    console.log(activeSelected)
     if (activeSelected == 'bedroom') {
         localStorage.setItem('room', JSON.stringify({
             "room1": 'active',
@@ -185,7 +179,6 @@ document.getElementById('roomeditsubmit').addEventListener('click', async functi
                 "room": localStorage.getItem('room'),
             })
         })
-        console.log(postResponse.jsondata)
         
     window.location.href = 'main.html'
 })

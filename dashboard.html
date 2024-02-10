@@ -15,11 +15,11 @@
   <title>StudyPal</title>
 </head>
   <body id="body" class="bg-dblue w-screen h-screen flex flex-col overflow-hidden items-center justify-center">
-    <div id='dashboardback' class="w-full flex items-center text-5xl text-cream"><i class="fa-solid fa-arrow-left m-8"></i></div>
+    <div id='dashboardback' class="w-full flex items-center text-5xl text-cream"><i class="fa-solid fa-arrow-left m-8 cursor-pointer"></i></div>
     <div class="w-full h-full flex items-center justify-center md:flex-row flex-col overflow-hidden p-6">
       <div id="detailscontainer" class="bg-orange md:w-2/5 w-full h-5/6 rounded-3xl flex items-center justify-center flex-col m-4">
         <label for="uploadpfp" class="relative flex w-72 h-1/2 justify-center items-center">
-          <img id='dashboardpfp' class='md:w-72 md:h-72 md:h-54 md:w-54 w-32 h-32 rounded-full absolute' src='' alt='Profile Picture'>
+          <img id='dashboardpfp' class='md:w-64 md:h-64 w-32 h-32 rounded-full absolute' src='' alt='Profile Picture'>
           <div class="w-72 h-72 group hover:bg-cream opacity-60 rounded-full absolute flex justify-center items-center cursor-pointer transition duration-500">
             <img class="hidden group-hover:block w-12" src="https://www.svgrepo.com/show/33565/upload.svg" alt="" />
           </div>
@@ -27,7 +27,7 @@
         <div class="flex h-1/2 flex-col items-center">
           <input id="uploadpfp" type="file" class="hidden"/>
 
-          <div id='dashboardusername' class="flex items-center text-cream font-concert 2xl:text-9xl xl:text-7xl lg:text-5xl text-3xl m-6">User</div>
+          <div id='dashboardusername' class="flex items-center text-cream font-concert 2xl:text-8xl xl:text-6xl lg:text-4xl text-2xl m-6">User</div>
           <form id="editusernamefield" class="hidden space-y-6 flex justify-center items-center flex-col">
             <div class="w-full h-auto">
               <div class="flex items-center justify-between">
