@@ -23,10 +23,10 @@ if (JSON.parse(localStorage.getItem("avatar")).avatar1 == 'active') {
 }
 document.getElementById('userpfp').src = pfpPath
 
-document.getElementById("userprofile").addEventListener("mouseover", function() {
+document.getElementById("userprofile").addEventListener("click", function() {
   document.getElementById("userdropdown").classList.toggle("hidden")
 })
-document.getElementById("hamburgermenu").addEventListener("mouseover", function() {
+document.getElementById("hamburgermenu").addEventListener("click", function() {
   document.getElementById("navbarhamburger").classList.toggle("hidden")
   document.getElementById("navbarhamburger").classList.toggle("absolute")
   document.getElementById("navbarhamburger").classList.toggle("top-28")
@@ -137,6 +137,17 @@ window.addEventListener('resize', () => {
   camera.aspect = document.getElementById('room3d').offsetWidth/document.getElementById('room3d').offsetHeight
   camera.updateProjectionMatrix()
   renderer.setSize(document.getElementById('room3d').offsetWidth, document.getElementById('room3d').offsetHeight)
+  if (document.getElementById('userdropdown').classList.contains('hidden')==false) {
+    document.getElementById("userdropdown").classList.add("hidden")
+  }
+  if (document.getElementById("navbarhamburger").classList.contains('hidden')==false) {
+    document.getElementById("navbarhamburger").classList.toggle("hidden")
+    document.getElementById("navbarhamburger").classList.toggle("absolute")
+    document.getElementById("navbarhamburger").classList.toggle("top-28")
+    document.getElementById("navbarhamburger").classList.toggle("left-0")
+    document.getElementById("navbarhamburger").classList.toggle("z-50")
+    document.getElementById("stupallogo").classList.toggle("drop-shadow-2xl")
+  }
 })
 
 function animate() {

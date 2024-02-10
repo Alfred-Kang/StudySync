@@ -41,7 +41,7 @@ document.getElementById('navleaderboard').addEventListener('click', async functi
     div.className = 'h-full lg:w-4/5 w-full flex justify-between items-center bg-orange rounded-3xl m-4'
     var username = document.createElement("div")
     username.className = 'text-cream md:text-4xl text-2xl font-concert m-4'
-    username.innerHTML = sortedData[i].username
+    username.innerHTML = `${i+1}. ${sortedData[i].username}`
     var xp = document.createElement("div")
     xp.className = 'text-cream md:text-4xl text-2xl font-concert m-4'
     xp.innerHTML = sortedData[i].xp
@@ -71,4 +71,5 @@ document.getElementById('navleaderboard').addEventListener('click', async functi
 
 document.getElementById('closeleaderboardcontainer').addEventListener('click', function() {
     document.getElementById('leaderboardcontainer').classList.toggle('hidden')
+    document.getElementById('leaderboard').replaceChildren()
 })
