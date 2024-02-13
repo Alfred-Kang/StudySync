@@ -18,8 +18,8 @@
   <div id='dashboardback' class="w-auto flex items-center text-5xl text-cream m-8"><i class="fa-solid fa-arrow-left cursor-pointer"></i></div>
     <div class="w-full h-full flex items-center justify-center md:flex-row flex-col overflow-hidden p-6">
       <div id="detailscontainer" class="bg-orange md:w-2/5 w-full h-5/6 rounded-3xl flex items-center justify-center flex-col m-4">
-        <label for="uploadpfp" class="relative flex w-72 h-1/2 justify-center items-center">
-          <img id='dashboardpfp' class='md:w-64 md:h-64 w-32 h-32 rounded-full absolute' src='' alt='Profile Picture'>
+        <label for="uploadpfp" class="transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 relative flex w-72 h-1/2 justify-center items-center">
+          <img id='dashboardpfp' class='animate-spin-slow md:w-64 md:h-64 w-32 h-32 rounded-full absolute' src='' alt='Profile Picture'>
           <div class="md:w-64 md:h-64 w-32 h-32 group hover:bg-cream opacity-60 rounded-full absolute flex justify-center items-center cursor-pointer transition duration-500">
             <img class="hidden group-hover:block w-12" src="https://www.svgrepo.com/show/33565/upload.svg" alt="" />
           </div>
@@ -27,7 +27,7 @@
         <div class="flex h-1/2 flex-col items-center">
           <input id="uploadpfp" type="file" class="hidden"/>
 
-          <div id='dashboardusername' class="flex items-center text-cream font-concert 2xl:text-8xl xl:text-6xl lg:text-4xl text-2xl m-6">User</div>
+          <div id='dashboardusername' class="transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 flex items-center text-cream font-concert 2xl:text-8xl xl:text-6xl lg:text-4xl text-2xl m-6">User</div>
           <form id="editusernamefield" class="hidden space-y-6 flex justify-center items-center flex-col">
             <div class="w-full h-auto">
               <div class="flex items-center justify-between">
@@ -40,7 +40,7 @@
             <button type="submit" id="usernameeditsubmit" class="bg-dblue hover:bg-dorange font-concert flex w-1/2 h-20 justify-center items-center rounded-full text-cream text-2xl">Update</button>
           </form>  
 
-          <div id='dashboardemail' class="flex items-center text-cream font-concert text-3xl m-6">Email</div>
+          <div id='dashboardemail' class="transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 flex items-center text-cream font-concert text-3xl m-6">Email</div>
           <form id="editemailfield" class="hidden space-y-6 flex justify-center items-center flex-col">
             <div class="w-full h-auto">
               <div class="flex items-center justify-between">

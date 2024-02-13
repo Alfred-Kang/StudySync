@@ -12,6 +12,9 @@ tailwind.config = {
         fontFamily: {
             'concert': ['Concert One', 'sans-serif'],
         },
+        animation: {
+          'spin-slow': 'spin 10s linear infinite',
+        },
       },
     }
   }
