@@ -1,4 +1,5 @@
 # StudyPal
+[Github Repository](https://github.com/alfrdkang/StudyPal)
 
 ## Introduction
 Integrated Studio Project: Interactive Web Application

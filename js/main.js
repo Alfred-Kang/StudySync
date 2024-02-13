@@ -27,7 +27,7 @@ document.getElementById("userprofile").addEventListener("click", function() {
 document.getElementById("hamburgermenu").addEventListener("click", function() {
   document.getElementById("navbarhamburger").classList.toggle("hidden")
   document.getElementById("navbarhamburger").classList.toggle("absolute")
-  document.getElementById("navbarhamburger").classList.toggle("top-28")
+  document.getElementById("navbarhamburger").style.top = `${document.getElementById('navbar').offsetHeight}px`
   document.getElementById("navbarhamburger").classList.toggle("left-0")
   document.getElementById("navbarhamburger").classList.toggle("z-50")
   document.getElementById("stupallogo").classList.toggle("drop-shadow-2xl")
