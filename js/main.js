@@ -35,6 +35,17 @@ document.getElementById("hamburgermenu").addEventListener("click", function() {
 
 const dashboardtoggle = document.getElementById("dashboardtoggle")
 dashboardtoggle.addEventListener("click", function() {
+  if (document.getElementById('userdropdown').classList.contains('hidden')==false) {
+    document.getElementById("userdropdown").classList.add("hidden")
+  }
+  if (document.getElementById("navbarhamburger").classList.contains('hidden')==false) {
+    document.getElementById("navbarhamburger").classList.toggle("hidden")
+    document.getElementById("navbarhamburger").classList.toggle("absolute")
+    document.getElementById("navbarhamburger").classList.toggle("top-28")
+    document.getElementById("navbarhamburger").classList.toggle("left-0")
+    document.getElementById("navbarhamburger").classList.toggle("z-50")
+    document.getElementById("stupallogo").classList.toggle("drop-shadow-2xl")
+  }
   window.location.href = "dashboard.html"
 })
 

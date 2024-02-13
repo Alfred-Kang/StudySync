@@ -1,6 +1,17 @@
 const apikey = "65b872123d3b7f1a90c26558"
 
 document.getElementById('navstudy').addEventListener('click', function() {
+    if (document.getElementById('userdropdown').classList.contains('hidden')==false) {
+        document.getElementById("userdropdown").classList.add("hidden")
+      }
+    if (document.getElementById("navbarhamburger").classList.contains('hidden')==false) {
+        document.getElementById("navbarhamburger").classList.toggle("hidden")
+        document.getElementById("navbarhamburger").classList.toggle("absolute")
+        document.getElementById("navbarhamburger").classList.toggle("top-28")
+        document.getElementById("navbarhamburger").classList.toggle("left-0")
+        document.getElementById("navbarhamburger").classList.toggle("z-50")
+        document.getElementById("stupallogo").classList.toggle("drop-shadow-2xl")
+      }
     document.getElementById('studycontainer').classList.toggle('hidden')
 })
 

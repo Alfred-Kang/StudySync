@@ -9,6 +9,17 @@ let activeSelected
 let activeSelectedPath
 
 document.getElementById('navroom').addEventListener('click', async function() {
+    if (document.getElementById('userdropdown').classList.contains('hidden')==false) {
+        document.getElementById("userdropdown").classList.add("hidden")
+      }
+    if (document.getElementById("navbarhamburger").classList.contains('hidden')==false) {
+        document.getElementById("navbarhamburger").classList.toggle("hidden")
+        document.getElementById("navbarhamburger").classList.toggle("absolute")
+        document.getElementById("navbarhamburger").classList.toggle("top-28")
+        document.getElementById("navbarhamburger").classList.toggle("left-0")
+        document.getElementById("navbarhamburger").classList.toggle("z-50")
+        document.getElementById("stupallogo").classList.toggle("drop-shadow-2xl")
+      }
     document.getElementById('roomcontainer').classList.toggle('hidden')
 
     if (JSON.parse(localStorage.getItem("room")).room2 !== "disabled" && document.getElementById('roomlock').classList.contains("hidden") == false){
@@ -33,10 +44,9 @@ document.getElementById('bedroomroom').addEventListener('click', function() {
 })
 
 document.getElementById('roomroom').addEventListener('click', function() {
-    if (JSON.parse(localStorage.getItem("room")).room2 == 'inactive') {
-        activeSelected = 'room'
-        refreshroom(activeSelected, activeSelectedPath)
-    } else if (JSON.parse(localStorage.getItem("room")).room2 == 'disabled'){
+    activeSelected = 'room'
+    refreshroom(activeSelected, activeSelectedPath)
+    if (JSON.parse(localStorage.getItem("room")).room2 == 'disabled'){
         if (localStorage.getItem('coins') >= 100) {
             document.getElementById('roompurchasecontainer').classList.toggle('hidden')
         } else {
