@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     "username": username,
                     "email": email,
                     "password": password,
-                    "coins": 0,
+                    "coins": 150, //free 150 coins on signup
                     "xp": 0,
                     "studyhours": 0,
                     "avatar": JSON.stringify({

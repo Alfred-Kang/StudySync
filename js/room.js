@@ -121,10 +121,12 @@ function refreshroom(activeSelected, activeSelectedPath) {
     controls.enableDamping = true
     controls.enablePan = false
     controls.enableRotation = false
-    controls.minDistance = 10
-    controls.maxDistance = 20
+    controls.minDistance = 30
+    controls.maxDistance = 40
     controls.minPolarAngle = 0.5
     controls.maxPolarAngle = 1.5
+    controls.minAzimuthAngle = -1
+    controls.maxAzimuthAngle = 1
     controls.autoRotate = false
     controls.target = new THREE.Vector3(0, 1, 0)
     controls.update()

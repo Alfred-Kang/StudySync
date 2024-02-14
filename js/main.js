@@ -10,6 +10,12 @@ if ((localStorage.getItem("id") == null)) {
   window.location.href = "index.html"
 } 
 
+window.setInterval(function() {
+  if (document.readyState === 'ready' || document.readyState === 'complete') {
+    document.getElementById('loadingcontainer').classList.add("hidden")
+  } 
+}, 1000);
+
 //nav
 let pfpPath
 if (JSON.parse(localStorage.getItem("avatar")).avatar1 == 'active') {
